@@ -1,0 +1,19 @@
+{
+  "terminal.integrated.env.windows": {
+    "PYTHONPATH": "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\code"
+  },
+  "[markdown]": {
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off",
+        "strings": "off"
+    }
+  },
+  "[json]": {
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off",
+        "strings": "off"
+    }
+  }
+}
