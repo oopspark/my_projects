@@ -1,13 +1,17 @@
 import pandas as pd
 from sqlalchemy import create_engine, text
 
+tempsql = r"C:\Users\parkj\Documents\workspace\my_projects\code\temp\temp.sql"
+
 class PostgreSQLDB:
-    def __init__(self, host="localhost", database="public" , user="root", password="1120", port="3306"):
+    def __init__(self, host="localhost", database="" , user="root", password="1120", port="3306"):
         self.db_url = f"mysql+pymysql://{user}:{password}@{host}:{port}/{database}"
         self.engine = create_engine(self.db_url)
         print("Database engine created.")
 
-    def exedf(self, query = None, sql_path="./temp.sql"):
+    def exedf(self, query = None, sql_path=None):
+        if sql_path is None:
+            sql_path = tempsql
         if query is None:
             with open(sql_path, "r", encoding="utf-8") as file:
                 query = text(file.read())
@@ -21,7 +25,9 @@ class PostgreSQLDB:
         print("Query executed successfully.")
         return df
 
-    def runsql(self, query = None, sql_path="./temp.sql"):
+    def runsql(self, query = None, sql_path=None):
+        if sql_path is None:
+            sql_path = tempsql
         try:
             if query is None:
                 with open(sql_path, "r", encoding="utf-8") as file:
@@ -32,7 +38,6 @@ class PostgreSQLDB:
             print("────────────────────────────────────")
             print(query)
             print("────────────────────────────────────")
-
             with self.engine.connect() as conn:
                 conn.execute(query)
 
