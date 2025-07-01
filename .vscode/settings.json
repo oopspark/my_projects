@@ -15,5 +15,33 @@
         "comments": "off",
         "strings": "off"
     }
-  }
+  },
+  "latex-workshop.synctex.afterBuild.enabled": true,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.synctex.viewer.sync": true,
+  "latex-workshop.synctex.autoSync.enabled": true,
+
+
+  "latex-workshop.latex.tools": [
+    {
+        "name": "xelatex",
+        "command": "xelatex",
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
+        ]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+      {
+          "name": "xelatex",
+          "tools": ["xelatex"]
+      }
+  ],
+  "latex-workshop.latex.recipes.default": "xelatex",
+  "latex-workshop.latex.toolchain": "xelatex"
+
+
 }

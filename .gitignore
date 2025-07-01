@@ -1,3 +1,34 @@
 heavy
 archive
 node_modules
+
+# LaTeX build files
+*.pdf
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.bbl
+*.blg
+*.run.xml
+
+# 임시/백업 파일
+*~
+*.bak
+*.backup
+*.tmp
+
+# OS 관련 파일
+.DS_Store
+Thumbs.db

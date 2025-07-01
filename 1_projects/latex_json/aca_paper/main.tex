@@ -1,0 +1,82 @@
+\documentclass[11pt,a4paper]{report}
+
+% 패키지 불러오기
+\usepackage{kotex}           % 한글
+\newfontfamily\hanjafont{Noto Serif CJK KR}  % 예: 윈도우 내장 중국어 폰트
+\usepackage[a4paper,
+  left=30mm,
+  right=25mm,
+  top=30mm,
+  bottom=30mm,
+  includeheadfoot]{geometry}
+  % 여백
+\usepackage{setspace}           % 줄 간격
+\usepackage{hyperref}
+
+
+\usepackage{lmodern}
+\usepackage{etoc}
+\usepackage{xparse}
+\usepackage{expl3}
+
+\usepackage{fancyhdr}           % 머리말/꼬리말
+\usepackage{graphicx}           % 이미지
+\usepackage{amsmath,amssymb}    % 수학
+\usepackage{biblatex}           % 참고문헌
+\addbibresource{bibliography.bib}  % 참고문헌 bib 파일
+
+% 폰트 설정 (XeLaTeX인 경우)
+\usepackage{fontspec}
+\setmainfont{나눔명조OTF}[
+  BoldFont = 나눔명조OTF Bold]
+
+\renewcommand{\contentsname}{}
+
+\makeatletter
+\spaceskip=0.7em plus 0.2em minus 0.2em
+\makeatother
+
+
+
+
+  % 들여쓰기 없음
+\setlength{\parskip}{6pt}       % 문단 간격
+\linespread{1.5}            % 1.5줄 간격
+
+% 본문 시작
+\begin{document}
+
+\pagenumbering{gobble}          % 페이지 번호 숨김
+\include{title}
+\include{approval}
+
+
+
+
+
+\pagenumbering{roman}           % 목차 등은 소문자 로마자
+\include{abstract}
+
+\begin{center}
+  {\fontsize{14pt}{\baselineskip}\selectfont \textbf{목차}}\\
+  \vspace{1cm}
+  \input{custom_toc}
+\end{center}
+
+
+
+
+\newpage
+
+\pagenumbering{arabic}          % 본문은 숫자 페이지
+\setcounter{page}{1}
+
+\include{chapter1}
+\include{chapter2}
+% 추가 장은 자유롭게 추가
+
+\include{appendices}            % 부록 (선택)
+
+\printbibliography              % 참고문헌 출력
+
+\end{document}
