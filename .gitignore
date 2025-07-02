@@ -22,6 +22,11 @@ node_modules
 *.bbl
 *.blg
 *.run.xml
+*.xdv
+*.bcf
+
+
+main.bcf
 
 # 임시/백업 파일
 *~

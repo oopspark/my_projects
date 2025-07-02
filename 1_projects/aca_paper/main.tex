@@ -10,30 +10,92 @@
   bottom=30mm,
   includeheadfoot]{geometry}
   % 여백
-\usepackage{setspace}           % 줄 간격
-\usepackage{hyperref}
+\usepackage{setspace}     
 
 
 \usepackage{lmodern}
-\usepackage{etoc}
 \usepackage{xparse}
 \usepackage{expl3}
 
 \usepackage{fancyhdr}           % 머리말/꼬리말
 \usepackage{graphicx}           % 이미지
 \usepackage{amsmath,amssymb}    % 수학
-\usepackage{biblatex}           % 참고문헌
-\addbibresource{bibliography.bib}  % 참고문헌 bib 파일
+
+
+\usepackage[
+  backend=biber
+  ,style=authoryear
+  ,language=korean
+  ]{biblatex}
+
+
+\addbibresource{references.bib} % .bib 파일 연결
+
 
 % 폰트 설정 (XeLaTeX인 경우)
 \usepackage{fontspec}
 \setmainfont{나눔명조OTF}[
   BoldFont = 나눔명조OTF Bold]
 
-\renewcommand{\contentsname}{}
-\renewcommand{\chaptername}{}
 
-\usepackage{etoolbox}
+% \renewcommand{\contentsname}{} %  빈칸으로 (아예 안 보이게)
+\renewcommand{\chaptername}{제~\thechapter~장} % "제 1 장" 처럼 출력
+
+
+\usepackage{titlesec}
+
+% 챕터 제목 크기 및 스타일 변경
+\titleformat{\chapter}[hang] % display: 별도 줄에 크게
+  {\normalfont\Large\bfseries\centering}   % 글꼴: 기본, Huge 크기, 굵게
+  {\chaptername }   % 번호 앞에 'Chapter' 붙이기 (영어 기준)
+  {20pt}                        % 번호와 제목 사이 간격
+  {}                       % 제목 글꼴 (추가 설정)
+
+% 섹션 제목 크기 및 스타일 변경
+\renewcommand{\thesection}{\arabic{section}}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries}      % 글꼴
+  {제~\thesection~절}                    % 번호 스타일 (여기서 '1.'처럼 점 붙임)
+  {1em}                            % 번호와 제목 사이 간격
+  {}
+
+
+% 서브섹션 제목 크기 및 스타일 변경
+\renewcommand{\thesubsection}{\arabic{subsection}}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries} % 기본 크기, 굵게
+  {\thesubsection .}
+  {1em}
+  {}
+
+
+  
+
+\renewcommand{\contentsname}{목 차}
+
+% \renewcommand{\figurename}{그림}
+% \renewcommand{\tablename}{표}
+\renewcommand{\listfigurename}{그림 목차}
+\renewcommand{\listtablename}{표 목차}
+
+
+
+\usepackage{caption}
+
+\DeclareCaptionLabelFormat{brackets}{[#1~#2]}
+
+\captionsetup{
+  labelformat=brackets,
+  labelsep=space,
+  format=hang,
+  font=normalsize
+}
+
+\captionsetup[figure]{name=그림}
+\captionsetup[table]{name=표}
+
 
 
 \makeatletter
@@ -41,16 +103,32 @@
 \makeatother
 
 
-\usepackage{titlesec}
-
-\titleformat{\chapter}[block]
-  {\normalfont\huge\bfseries\centering} % 글꼴 크기, 굵기, 중앙 정렬
-  {} % 챕터 번호 출력하지 않음
-  {0pt}
-  {}
+\titlespacing*{\chapter}{0pt}{0pt}{80pt}
 
 
-\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+  % 들여쓰기 없음
+\setlength{\parskip}{0pt}       % 문단 간격
+\linespread{1.5}            % 1.5줄 간격
+
+
+\usepackage{tocloft}
+
+\renewcommand{\cftchapfont}{\Large\bfseries} % 목차에서 chapter 글씨 크기, 굵게
+\renewcommand{\cftsecfont}{\large}            % 목차에서 section 글씨 크기
+\renewcommand{\cftsubsecfont}{\normalsize}    % 목차에서 subsection 글씨 크기
+
+
+\renewcommand{\cftchappagefont}{\Large}  % chapter 페이지 번호 크기
+\renewcommand{\cftsecpagefont}{\large}   % section 페이지 번호 크기
+\renewcommand{\cftsubsecpagefont}{\normalsize} % subsection 페이지 번호 크
+
+
+% 목차 항목 간 행간 간격 조절
+\setlength{\cftbeforechapskip}{10pt}   % 챕터 항목 위 간격 (행간)
+\setlength{\cftbeforesecskip}{5pt}     % 섹션 항목 위 간격
+\setlength{\cftbeforesubsecskip}{0pt}  % 서브섹션 항목 위 간격
+
+
 
 
 % \makeatletter
@@ -60,11 +138,37 @@
 
 
 
-  % 들여쓰기 없음
-\setlength{\parskip}{6pt}       % 문단 간격
-\linespread{1.5}            % 1.5줄 간격
+
+
+
+\usepackage{etoolbox}
+
+\usepackage{etoc}
+
+% 목차 제목 글꼴/크기 변경 예시 (글꼴 크기와 굵기 조정)
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\tableofcontents}
+  {\chapter*{\contentsname}}% 원래 코드
+  {\chapter*{\fontsize{20}{24}\selectfont\bfseries\centering 목차}}% 중앙정렬 추가
+  {}{}
+\patchcmd{\listoffigures}
+  {\chapter*{\listfigurename}}
+  {\chapter*{\fontsize{18}{22}\selectfont\bfseries\centering 그림 목록}}% 중앙정렬 추가
+  {}{}
+\patchcmd{\listoftables}
+  {\chapter*{\listtablename}}
+  {\chapter*{\fontsize{18}{22}\selectfont\bfseries\centering 표 목록}}% 중앙정렬 추가
+  {}{}
+\makeatother
+
+
+
+
 
 % 본문 시작
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
 
 \pagenumbering{gobble}          % 페이지 번호 숨김
@@ -73,36 +177,17 @@
 
 
 
-
-
 \pagenumbering{roman}           % 목차 등은 소문자 로마자
 \include{abstract}
 
-\begin{center}
-  \setlength{\parskip}{0pt}
-  \makebox[2.5cm][s]{{\fontsize{14pt}{\baselineskip}\selectfont \textbf{목차}}}\\
-  \vspace{1.5cm}
-  \input{toc_general.tex}
-  \vspace{1.5cm} {\fontsize{12pt}{\baselineskip} \selectfont \textbf{참고문헌 \dotfill \pageref{chap:chapter1}}} \par
-  {\fontsize{12pt}{\baselineskip} \selectfont \textbf{Abstract \dotfill \pageref{chap:chapter1}}} \par
-\end{center}
 
+
+\tableofcontents
 
 \newpage
 
-
-
-\begin{center}
-  \setlength{\parskip}{0pt}
-  \makebox[3cm][s]{{\fontsize{14pt}{\baselineskip}\selectfont \textbf{표목차}}}\\
-  \vspace{1.5cm}
-  \input{toc_figures.tex}
-  \vspace{1.5cm}
-  \makebox[3.5cm][s]{{\fontsize{14pt}{\baselineskip}\selectfont \textbf{그림목차}}}\\
-  \vspace{1.5cm}
-  \input{toc_tables.tex}
-\end{center}
-
+\listoffigures
+\listoftables
 
 
 \newpage
@@ -114,8 +199,9 @@
 \include{chapter2}
 % 추가 장은 자유롭게 추가
 
-\include{appendices}            % 부록 (선택)
 
-\printbibliography              % 참고문헌 출력
+\printbibliography[title={참 고 문 헌}]
+
+\include{abstract_en}
 
 \end{document}

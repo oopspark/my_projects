@@ -4,44 +4,74 @@
   },
   "[markdown]": {
     "editor.quickSuggestions": {
-        "other": "on",
-        "comments": "off",
-        "strings": "off"
+      "other": "on",
+      "comments": "off",
+      "strings": "off"
     }
   },
   "[json]": {
     "editor.quickSuggestions": {
-        "other": "on",
-        "comments": "off",
-        "strings": "off"
+      "other": "on",
+      "comments": "off",
+      "strings": "off"
     }
   },
+
   "latex-workshop.synctex.afterBuild.enabled": true,
-  "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.synctex.viewer.sync": true,
   "latex-workshop.synctex.autoSync.enabled": true,
-
+  "latex-workshop.view.pdf.viewer": "tab",
 
   "latex-workshop.latex.tools": [
     {
-        "name": "xelatex",
-        "command": "xelatex",
-        "args": [
-            "-synctex=1",
-            "-interaction=nonstopmode",
-            "-file-line-error",
-            "%DOC%"
-        ]
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": [
+        "%DOCFILE%"
+      ]
+    },
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-xelatex",
+        "-quiet",
+        "%DOC%"
+      ]
     }
   ],
+
   "latex-workshop.latex.recipes": [
-      {
-          "name": "xelatex",
-          "tools": ["xelatex"]
-      }
+    {
+      "name": "latexmk (xelatex + biber 자동)",
+      "tools": [
+        "latexmk"
+      ]
+    },
+    {
+      "name": "xelatex → biber → xelatex ×2 (수동)",
+      "tools": [
+        "xelatex",
+        "biber",
+        "xelatex",
+        "xelatex"
+      ]
+    }
   ],
-  "latex-workshop.latex.recipes.default": "xelatex",
-  "latex-workshop.latex.toolchain": "xelatex"
 
-
+  "latex-workshop.latex.recipes.default": "latexmk (xelatex + biber 자동)",
+  "latex-workshop.latex.autoBuild.run": "onSave"
 }
