@@ -1,4 +1,5 @@
 {
+  "files.followSymlinks": true,
   "terminal.integrated.env.windows": {
     "PYTHONPATH": "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\code"
   },
