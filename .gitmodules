@@ -1,3 +1,3 @@
-[submodule "1_projects/my_page"]
-	path = 1_projects/my_page
+[submodule "7_project/my_page"]
+	path = 7_project/my_page
 	url = https://github.com/oopspark/my_page.git
