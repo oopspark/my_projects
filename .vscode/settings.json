@@ -11,8 +11,13 @@
   
   "files.followSymlinks": true,
   "terminal.integrated.env.windows": {
-    "PYTHONPATH": "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\code"
+    "PYTHONPATH": "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\0_basic"
   },
+  "python.analysis.extraPaths": [
+    "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\0_basic"
+  ],
+
+
   "[markdown]": {
     "editor.quickSuggestions": {
       "other": "on",
