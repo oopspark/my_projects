@@ -160,7 +160,7 @@ class DashboardMainWindow(QWidget):
             QTreeWidget::item:selected { background-color: #333; }
         """)
         main_layout.addWidget(self.tree)
-
+#나는 아름다운 나비
         self.board_stack = QStackedWidget()
         main_layout.addWidget(self.board_stack)
 
