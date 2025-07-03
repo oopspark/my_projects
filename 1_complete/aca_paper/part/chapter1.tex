@@ -60,12 +60,14 @@
 \setlength{\tabcolsep}{10pt}
 
 % tabularx로 \textwidth만큼 꽉 차게
-\begin{tabularx}{\textwidth}{|c|c|c|Y|Y|}
+\begin{tabularx}{\textwidth}{c|c|c|Y|Y}
 \hline
-\multirow{2}{*}{Sequence name} & \multirow{2}{*}{Frames} & \multirow{2}{*}{QP} & \multicolumn{2}{c|}{Packed view size} \\\cline{4-5}
-& & & No stride & With stride \\
+\rowcolor{gray!30}
+& & & \multicolumn{2}{c}{Packed view size} \\\cline{4-5} 
+\rowcolor{gray!30}
+\multirow{-2}{*}{Sequence name} & \multirow{-2}{*}{Frames} & \multirow{-2}{*}{QP} & No stride & With stride \\
 
-\hline
+\hline\hline
 \csvreader[
   late after line=\\\hline,
   head to column names
@@ -84,6 +86,15 @@
 \caption{My table}
 \end{table}
 
+
+
+\begin{tabular}{|c|c|}
+\hline
+\cellcolor{gray!20} & 셀 A \\
+\cline{2-2}
+\multirow{-2}{*}{\cellcolor{gray!20}합침} & 셀 B \\
+\hline
+\end{tabular}
 
 
 

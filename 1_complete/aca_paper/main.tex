@@ -25,8 +25,9 @@
 % \keepXColumns % 중복 방지
 
 % 열 정의: X열을 포함해서 자동 너비 분배 + 회색 배경 열 정의
-\newcolumntype{C}[1]{>{\columncolor{gray!20}\arraybackslash}c}  % 고정폭 회색열
-\newcolumntype{Y}{>{\columncolor{gray!20}\centering\arraybackslash}X}  % 가변폭 열 (tabularx 전용)
+% \newcolumntype{C}{>{\columncolor{gray!20}}c}  % 고정폭 회색열
+\newcolumntype{Y}{>{\centering \arraybackslash}X}  % 가변폭 열 (tabularx 전용)
+
 
 
 \usepackage{pgfkeys}
@@ -94,7 +95,7 @@
   {}
 
 
-  
+
 
 \renewcommand{\contentsname}{목 차}
 
@@ -202,7 +203,6 @@
 
 \pagenumbering{roman}           % 목차 등은 소문자 로마자
 \include{part/abstract}
-
 
 
 \tableofcontents
