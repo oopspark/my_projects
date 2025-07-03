@@ -1,0 +1,23 @@
+\documentclass[11pt,a4paper]{report}
+
+\input{auto/setting}
+\input{auto/information}
+
+\begin{document}
+\pagenumbering{gobble}         % 페이지 번호 숨김
+\include{part/title}
+\include{part/approval}
+\pagenumbering{roman}           % 목차 등은 소문자 로마자
+\include{part/abstract}
+\tableofcontents
+\newpage
+\listoffigures
+\listoftables
+\newpage
+\pagenumbering{arabic}          % 본문은 숫자 페이지
+\setcounter{page}{1}
+\include{part/chapter_1}
+\include{part/chapter_2}
+\printbibliography[title={참 고 문 헌}]
+\include{part/abstract_en}
+\end{document}

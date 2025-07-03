@@ -1,5 +1,3 @@
-\documentclass[11pt,a4paper]{report}
-
 % 패키지 불러오기
 \usepackage{kotex}           % 한글
 \newfontfamily\hanjafont{Noto Serif CJK KR}  % 예: 윈도우 내장 중국어 폰트
@@ -18,6 +16,7 @@
 \usepackage{makecell}
 \usepackage[table]{xcolor} % 색상 패키지
 
+\usepackage{indentfirst}
 
 
 \usepackage{tabularx}
@@ -27,6 +26,8 @@
 % 열 정의: X열을 포함해서 자동 너비 분배 + 회색 배경 열 정의
 % \newcolumntype{C}{>{\columncolor{gray!20}}c}  % 고정폭 회색열
 \newcolumntype{Y}{>{\centering \arraybackslash}X}  % 가변폭 열 (tabularx 전용)
+
+\renewcommand{\arraystretch}{1.5}
 
 
 
@@ -185,46 +186,3 @@
   {\chapter*{\fontsize{18}{22}\selectfont\bfseries\centering 표 목록}}% 중앙정렬 추가
   {}{}
 \makeatother
-
-
-
-
-
-% 본문 시작
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{document}
-
-\pagenumbering{gobble}          % 페이지 번호 숨김
-\include{part/title}
-\include{part/approval}
-
-
-
-\pagenumbering{roman}           % 목차 등은 소문자 로마자
-\include{part/abstract}
-
-
-\tableofcontents
-
-\newpage
-
-\listoffigures
-\listoftables
-
-
-\newpage
-
-\pagenumbering{arabic}          % 본문은 숫자 페이지
-\setcounter{page}{1}
-
-\include{part/chapter1}
-\include{part/chapter2}
-% 추가 장은 자유롭게 추가
-
-
-\printbibliography[title={참 고 문 헌}]
-
-\include{part/abstract_en}
-
-\end{document}

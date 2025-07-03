@@ -1,0 +1,31 @@
+basic_info:
+  authorname: 박지민
+  authorname_en: Park Ji Min
+  student_number: 2025-20181
+  university: 서울대학교
+  university_en: Seoul National University
+  affiliation: 농업생명과학대학
+  affiliation_en: The Graduate School of Public Administration
+  department: 농경제사회학과
+  major: 농업자원경제학
+  course: 석사
+
+
+title:
+  main: 공적개발원조(ODA)가 공여국에 미치는 경제 · 사회문화적 효과
+  sub: "한국의 對 중점협력국 ODA를 중심으로"
+  main_en: The Economic and Socio-Cultural Effects on Official Developement Assistance on Donor Country
+  
+
+approval:
+  supervisor: 이석현
+  publish_year_month: 2025년 2월
+  submit_year_month: 2025년 2월
+  committee:
+    chair: 전소희
+    vice_chair: 전소희
+    member: 전소희
+
+abstract:
+  keyword: 전소희
+  keyword_en: 전소희
