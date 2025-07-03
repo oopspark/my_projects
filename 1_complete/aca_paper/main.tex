@@ -9,6 +9,29 @@
   top=30mm,
   bottom=30mm,
   includeheadfoot]{geometry}
+
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{array}
+\usepackage{booktabs} 
+
+\usepackage{makecell}
+\usepackage[table]{xcolor} % 색상 패키지
+
+
+
+\usepackage{tabularx}
+% \usepackage{ltablex} % tabularx의 확장판
+% \keepXColumns % 중복 방지
+
+% 열 정의: X열을 포함해서 자동 너비 분배 + 회색 배경 열 정의
+\newcolumntype{C}[1]{>{\columncolor{gray!20}\arraybackslash}c}  % 고정폭 회색열
+\newcolumntype{Y}{>{\columncolor{gray!20}\centering\arraybackslash}X}  % 가변폭 열 (tabularx 전용)
+
+
+\usepackage{pgfkeys}
+\usepackage{csvsimple}
+
   % 여백
 \usepackage{setspace}     
 
@@ -29,7 +52,7 @@
   ]{biblatex}
 
 
-\addbibresource{references.bib} % .bib 파일 연결
+\addbibresource{data/references.bib} % .bib 파일 연결
 
 
 % 폰트 설정 (XeLaTeX인 경우)
@@ -172,13 +195,13 @@
 \begin{document}
 
 \pagenumbering{gobble}          % 페이지 번호 숨김
-\include{title}
-\include{approval}
+\include{part/title}
+\include{part/approval}
 
 
 
 \pagenumbering{roman}           % 목차 등은 소문자 로마자
-\include{abstract}
+\include{part/abstract}
 
 
 
@@ -195,13 +218,13 @@
 \pagenumbering{arabic}          % 본문은 숫자 페이지
 \setcounter{page}{1}
 
-\include{chapter1}
-\include{chapter2}
+\include{part/chapter1}
+\include{part/chapter2}
 % 추가 장은 자유롭게 추가
 
 
 \printbibliography[title={참 고 문 헌}]
 
-\include{abstract_en}
+\include{part/abstract_en}
 
 \end{document}

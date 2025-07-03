@@ -54,10 +54,44 @@
 
 
 
+\begin{table} [h]
+\caption{\label{tab:stride} Packed view size with different region allocation method. }
+\centering
+\setlength{\tabcolsep}{10pt}
+
+% tabularx로 \textwidth만큼 꽉 차게
+\begin{tabularx}{\textwidth}{|c|c|c|Y|Y|}
+\hline
+\multirow{2}{*}{Sequence name} & \multirow{2}{*}{Frames} & \multirow{2}{*}{QP} & \multicolumn{2}{c|}{Packed view size} \\\cline{4-5}
+& & & No stride & With stride \\
+
+\hline
+\csvreader[
+  late after line=\\\hline,
+  head to column names
+]{data/csv/sample.csv}{}{
+  \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv
+}
+\end{tabularx}
+
+\end{table}
+
+
+\begin{table}
+ \begin{tabularx}{\textwidth}{XX}
+    foo & bar
+\end{tabularx}
+\caption{My table}
+\end{table}
+
+
+
+
+
 \section{연구 목적}
 
 이 연구의 궁극적인 목적은 한국 농업자원경제 구조에 영향을 미치는 정책 변수들을 식별하고,  
-그 영향력을 실증적으로 분석하여 정책의 효율성을 평가하는 것이다.  
+그 영향력을 실증적으로 분석하여 정책의 효율성을 평가하는 것이다.  DID
 
 정책 효과는 단순한 재정 지출이나 보조금 액수가 아니라,  
 그 결과로 나타나는 농가의 행태 변화, 소득 변화, 자원 활용 방식 등을 기준으로 평가되어야 한다.  
@@ -72,20 +106,20 @@
 본 절에서는 주요 정책 시행 이전과 이후의 농업 구조를 다양한 지표를 통해 비교한다.  
 예컨대, 농가의 평균 경작 면적, 법인 농가 비율, 청년 농업인 유입률, 스마트팜 도입률 등의 변화를 중심으로 분석한다.
 
-% 표 2: 농가 유형별 구조 변화
-\begin{table}[htbp]
-  \centering
-  \begin{tabular}{|c|c|c|c|}
-    \hline
-    구분 & 2010 & 2020 & 변화율 (\%) \\
-    \hline
-    평균 경작면적 (ha) & 1.1 & 1.8 & +63.6 \\
-    영농법인 비율 (\%) & 3.2 & 8.7 & +171.9 \\
-    청년 농업인 비중 (\%) & 4.8 & 6.2 & +29.2 \\
-    \hline
-  \end{tabular}
-  \caption{2010–2020년 농가 구조 변화 주요 지표}\label{tab:chapter1_2}
-\end{table}
+% % 표 2: 농가 유형별 구조 변화
+% \begin{table}[htbp]
+%   \centering
+%   \begin{tabular}{|c|c|c|c|}
+%     \hline
+%     구분 & 2010 & 2020 & 변화율 (\%) \\
+%     \hline
+%     평균 경작면적 (ha) & 1.1 & 1.8 & +63.6 \\
+%     영농법인 비율 (\%) & 3.2 & 8.7 & +171.9 \\
+%     청년 농업인 비중 (\%) & 4.8 & 6.2 & +29.2 \\
+%     \hline
+%   \end{tabular}
+%   \caption{2010–2020년 농가 구조 변화 주요 지표}\label{tab:chapter1_2}
+% \end{table}
 
 ---
 

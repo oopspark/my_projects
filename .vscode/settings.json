@@ -17,6 +17,15 @@
     "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\0_basic"
   ],
 
+  "editor.autoIndent": "full",
+  "editor.formatOnType": true,
+
+
+
+  "[yaml]": {
+  "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+
 
   "[markdown]": {
     "editor.quickSuggestions": {
