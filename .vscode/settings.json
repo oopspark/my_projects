@@ -11,11 +11,20 @@
   
   "files.followSymlinks": true,
   "terminal.integrated.env.windows": {
-    "PYTHONPATH": "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\0_basic"
+    "PYTHONPATH": "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\0_basic;C:\\Users\\parkj\\Documents\\workspace\\my_projects\\7_project"
   },
   "python.analysis.extraPaths": [
-    "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\0_basic"
+    "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\0_basic",
+    "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\7_project"
   ],
+
+
+  "yaml.schemas": {
+    "0_basic/schema/schema_gg_theme.json": ["gg_theme.yaml"]
+  },
+
+
+
 
   "editor.autoIndent": "full",
   "editor.formatOnType": true,
