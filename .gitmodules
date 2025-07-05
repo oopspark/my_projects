@@ -1,3 +1,4 @@
-[submodule "7_project/my_page"]
-	path = 7_project/my_page
-	url = https://github.com/oopspark/my_page.git
+[submodule "7_project/jekyllBear"]
+	path = 7_project/jekyllBear
+	url = https://github.com/oopspark/jekyllBear.git
+
