@@ -41,3 +41,12 @@ main.bcf
 .DS_Store
 Thumbs.db
 7_project/jekyllBear
+
+
+_site
+
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+Gemfile.lock

@@ -1,5 +1,5 @@
-# [submodule "7_project/my_site"]
-# 	path = 7_project/my_site
-# 	url = https://github.com/oopspark/my_site.git
-#     ignore = dirty
+[submodule "7_project/my_site/_site"]
+	path = 7_project/my_site/_site
+	url = https://github.com/oopspark/my_site/_site.git
+    ignore = dirty
 
