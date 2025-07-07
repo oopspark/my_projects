@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <!-- 문서 제목 (브라우저 탭에 표시) -->
+  <title>{{ page.title }} | {{ site.title }}</title>
+
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+
+  <!-- 예시: favicon 경로 -->
+  <!-- <link rel="shortcut icon" href="{{ site.url }}/assets/favicon.ico" type="image/x-icon" /> -->
+  <!-- <link rel="icon" href="{{ site.url }}/assets/favicon.ico" type="image/x-icon" /> -->
+
+  <!-- 캐논리컬 URL -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+  <!-- 스타일시트 -->
+  <link rel="stylesheet" href="{{ site.url }}/assets/style.css" />
+</head>
+
+<body>
