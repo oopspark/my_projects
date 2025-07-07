@@ -28,9 +28,9 @@ title: Park_Jimin
 # the base hostname & protocol for your site, e.g. http://example.com
 
 
-# url: "https://oopspark.github.io/Park_Jimin" 
+url: "https://oopspark.github.io/Park_Jimin" 
 
-url: "http://127.0.0.1:4000"
+# url: "http://127.0.0.1:4000"
 
 
 # Build settings

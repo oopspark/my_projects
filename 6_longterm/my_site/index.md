@@ -1,8 +1,6 @@
 ---
-layout: default
-title: About
+layout: home
+title: Blog
+description: Here be writings
 permalink: /
 ---
-
-
-Hello! sss
