@@ -7,14 +7,14 @@ permalink: /:title
 ---
 
 I don’t see sarcasm as **humor**.
-Most of the time, it’s just someone trying to teach others what they believe is true.
+Most of the time, it’s just someone trying to teach others what they believe to be true.
 
-And usually, there’s no truth — but **reality**.
+In many cases, the **truth** they hold is merey their own perspective. What really matters is the **reality** of how we live.
 
-That’s why I prefer things that are straightforward — like my own Bear homepage.
-There’s no bullshit, just an honest expression of what I actually want to say.
+That’s why I prefer things that are straightforward, like my own Bear homepage.
+There’s no bullshit, just an honest expression of what I actually want to deliver.
 
-The reason **Tim Robinson’s comedy skits** always get me is because he shows how situations get **awkward** when people expose their absurdity or concealed desires — things no one would want to says out loud.
+The reason **Tim Robinson’s comedy skits** always get me is because he shows how situations get **awkward** when people expose their absurdity or concealed desires, things no one would want to says out loud.
 
 Here are some skits I like.
 
