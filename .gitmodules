@@ -1,5 +1,4 @@
-[submodule "6_longterm/my_site/_site"]
-	path = 6_longterm/my_site/_site
-	url = https://github.com/oopspark/my_site/_site.git
-    ignore = dirty
 
+[submodule "/home/park/workspace/my_projects/jekyll/my_site/_site"]
+	path = /home/park/workspace/my_projects/jekyll/my_site/_site
+	url = https://github.com/oopspark/Park_Jimin.git
