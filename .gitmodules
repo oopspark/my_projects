@@ -1,4 +1,3 @@
-
-[submodule "/home/park/workspace/my_projects/jekyll/my_site/_site"]
-	path = /home/park/workspace/my_projects/jekyll/my_site/_site
-	url = https://github.com/oopspark/Park_Jimin.git
+[submodule "jekyll/my_site/_site"]
+    path = jekyll/my_site/_site
+    url = https://github.com/oopspark/Park_Jimin.git
