@@ -1,5 +1,5 @@
 {
-    "files.exclude": {
+  "files.exclude": {
     "**/node_modules": true,
     "**/dist": true
   },
@@ -7,35 +7,28 @@
     "**/node_modules": true,
     "**/dist": true
   },
-  "typescript.tsdk": "node_modules/typescript/lib",
-  
   "files.followSymlinks": true,
-  "terminal.integrated.env.windows": {
-    "PYTHONPATH": "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\0_basic;C:\\Users\\parkj\\Documents\\workspace\\my_projects\\7_project"
-  },
+  "python.formatting.provider": "black",
+  "editor.formatOnSave": true, // 모든 언어에 기본 포맷 저장 활성화
   "python.analysis.extraPaths": [
     "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\0_basic",
     "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\7_project"
   ],
-
-
-  "yaml.schemas": {
-    "0_basic/schema/schema_gg_theme.json": ["gg_theme.yaml"]
+  "terminal.integrated.env.windows": {
+    "PYTHONPATH": "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\0_basic;C:\\Users\\parkj\\Documents\\workspace\\my_projects\\7_project"
   },
-
-
-
-
-  "editor.autoIndent": "full",
-  "editor.formatOnType": true,
-
-
-
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
+  },
   "[yaml]": {
-  "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-
-
+  "yaml.schemas": {
+    "0_basic/schema/schema_gg_theme.json": [
+      "gg_theme.yaml"
+    ]
+  },
   "[markdown]": {
     "editor.quickSuggestions": {
       "other": "on",
@@ -50,12 +43,12 @@
       "strings": "off"
     }
   },
-
+  "editor.autoIndent": "full",
+  "editor.formatOnType": true,
   "latex-workshop.synctex.afterBuild.enabled": true,
   "latex-workshop.synctex.viewer.sync": true,
   "latex-workshop.synctex.autoSync.enabled": true,
   "latex-workshop.view.pdf.viewer": "tab",
-
   "latex-workshop.latex.tools": [
     {
       "name": "xelatex",
@@ -87,7 +80,6 @@
       ]
     }
   ],
-
   "latex-workshop.latex.recipes": [
     {
       "name": "latexmk (xelatex + biber 자동)",
@@ -105,7 +97,6 @@
       ]
     }
   ],
-
   "latex-workshop.latex.recipes.default": "latexmk (xelatex + biber 자동)",
   "latex-workshop.latex.autoBuild.run": "onSave"
 }
