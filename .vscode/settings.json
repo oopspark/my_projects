@@ -11,12 +11,9 @@
   "python.formatting.provider": "black",
   "editor.formatOnSave": true, // 모든 언어에 기본 포맷 저장 활성화
   "python.analysis.extraPaths": [
-    "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\0_basic",
-    "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\7_project"
+    ""
   ],
-  "terminal.integrated.env.windows": {
-    "PYTHONPATH": "C:\\Users\\parkj\\Documents\\workspace\\my_projects\\0_basic;C:\\Users\\parkj\\Documents\\workspace\\my_projects\\7_project"
-  },
+  "python.terminal.activateEnvironment": true,
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer",
     "editor.formatOnSave": true

@@ -148,6 +148,7 @@ def connect_mysql(user="root", password="1120", host="localhost", port=3306):
 
 
 def create_schema(cursor, schema_name):
+
     cursor.execute(f"DROP SCHEMA IF EXISTS `{schema_name}`;")
     cursor.execute(
         f"CREATE SCHEMA `{schema_name}` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
@@ -210,10 +211,6 @@ def process_folder_with_schema(root_dir, schema_dict, keyword=None, position=Non
     cursor = conn.cursor()
 
     base_schema = "faostat"
-    print(f"🔨 Creating schema: {base_schema}")
-
-    create_schema(cursor, base_schema)
-
     for fname, col_types in schema_dict.items():
 
         table_name = to_mysql_table_name(fname, keyword, position)
@@ -252,6 +249,12 @@ def main():
     convert_csvs_to_utf8_and_move(target_dir, utf8_done_folder)
 
     types = analyze_csv_folder_column_types(utf8_done_folder, sample_limit=1000)
+
+    base_schema = "faostat"
+    conn = connect_mysql()
+    cursor = conn.cursor()
+    create_schema(cursor, base_schema)
+
     process_folder_with_schema(
         utf8_done_folder, types, keyword="_E_All_Data_(Normalized)", position="suffix"
     )
